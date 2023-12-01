@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { fireEvent, render, screen } from '@testing-library/react';
+//import App from './App';
+//import BookingForm from './components/BookingForm';
+import Main from './components/Main';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('InitalizeTimes function and availableTimes state both return ""', () => {
+  const initializeTimes = jest.fn();
+  //render(<BookingForm handleChange={handleChange}/>);
+  render(<Main/>)
+
+  //const selectInput = screen.getByLabelText(/Choose time/);
+  //fireEvent.change(selectInput, {target: {value: "20:00"}});
+
+  expect(initializeTimes).toBeCalled();
+  expect(initializeTimes).toReturn("");
 });

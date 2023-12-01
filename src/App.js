@@ -1,22 +1,24 @@
-import Header from "components/Header";
-import Nav from "components/Nav";
-import Main from "components/Main";
-import Footer from "components/Footer";
 import './App.css';
+//import Home from './components/Home';
+import Nav from './components/Nav';
+import Header from './components/Header';
+import Main from './components/Main';
+import Specials from './components/Specials';
+import Testimonials from './components/Testimonials';
+import About from './components/About';
+import Footer from './components/Footer';
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Header className="App">
+      <>
         <Nav/>
-        <h1>Homepage</h1>
-      </Header>
-      <Main>
-      </Main>
-      <Footer>
-      </Footer>
-    </>
+        <Header className="App" title="Little Lemon" secondTitle="Chicago"/>
+        <Main>
+          <Specials/>
+          <Testimonials/>
+          <About/>
+        </Main>
+        <Footer/>
+      </>
   );
 }
-
-export default App;
