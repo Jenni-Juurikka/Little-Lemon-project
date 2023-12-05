@@ -29,19 +29,12 @@
 }
 
 /* Header and navigation */
-/* Navigation logo: <li className="navItem"><img src={logo} alt="Little Lemon logo" width="125px"/></li>
-<ul>
-    <li className="navItem"><img src={logo} alt="Little Lemon logo"/></li>
-    <li className="navItem"></li>
-    <li className="navItem"></li>
-</ul>
-*/
 .header, .navigation, .footer, .specials div, .testimonials .reviews, .aboutLittleLemon {
   display: flex;
   flex-flow: row wrap;
 }
 
-.header aside, .navigation .navItem, .footer aside, .aboutLittleLemon aside {
+.header aside, .navigation .navLogo, .navigation .navItem, .footer aside, .aboutLittleLemon aside {
   flex: 1;
 }
 
@@ -72,10 +65,7 @@
 .navigation {
   background-color: #FBDABB;
   padding: 10px;
-}
-
-.navigation .navItem {
-  list-style-type: none;
+  padding-top: 20px;
   font-size: 14px;
   text-align: center;
   font-weight: 600;
@@ -83,8 +73,17 @@
   color: #333333;
 }
 
-.navigation .navItem, .footer li {
+.navItem, .navLogo {
+  text-decoration: none;
+  color: #333333;
+}
+
+.navigation .navLogo, .navigation .navItem, .footer li {
   list-style-type: none;
+}
+
+.navigation .menuIcon {
+  display: none;
 }
 
 .header aside, .aboutLittleLemon aside {
@@ -135,8 +134,19 @@
 
 /* Main section */
 .aboutLittleLemon aside img {
-  width: 25%;
+  width: 50%;
   object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 2px 2px 15px;
+}
+
+.aboutLittleLemon .aboutPicture1 {
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+.aboutLittleLemon .aboutPicture2 {
+  margin-left: -70px;
 }
 
 .specials, .aboutLittleLemon {
@@ -158,6 +168,12 @@
   background-color: #FBDABB;
 }
 
+.testimonials aside div {
+  overflow-y: auto;
+  width: 250px;
+  text-align: center;
+}
+
 .testimonials, .testimonials h2, .testimonials aside aside {
   background-color: #495E57;
   margin-top: 0;
@@ -175,6 +191,20 @@
 
 .specials div {
   justify-content: center;
+}
+
+.specials div#specialsHeader {
+  margin-top: 50px;
+}
+
+.specials div#specialsHeaderButton {
+  justify-content: right;
+}
+
+.specials div#specialsHeaderButton input {
+  padding: 10px;
+  margin-right: 150px;
+  margin-bottom: 10px;
 }
 
 .specials aside {
@@ -262,12 +292,42 @@
   border-radius: 10px;
   width: 125px;
   height: 125px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-right: 10px;
   margin-left: 10px;
 }
 
 .testimonials aside {
   background-color: #495E57;
+}
+
+.bookingPage {
+  background-color: #FBDABB;
+  padding: 25px;
+}
+
+.bookingForm {
+  background-color: #495E57;
+  color: #F4CE14;
+  font-weight: bold;
+  width: 100%;
+  padding: 40px 100px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.bookingForm input[type="submit"] {
+  background-color: #F4CE14;
+  color: #333333;
+  border: 1px solid #333333;
+  border-radius: 50px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.bookingForm input, .bookingForm select {
+  padding: 10px;
 }
 
 /* Footer section */
@@ -278,7 +338,7 @@
 }
 
 .footer img {
-  width: 130px;
+  width: 100px;
   object-fit: contain;
   margin-left: 30px;
 }
@@ -289,5 +349,42 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    overflow-wrap: break-word;
+  }
+
+  .titleAside, .specials div#specialsHeaderButton {
+    width: 100%;
+  }
+
+  .navigation img {
+    width: 150px;
+  }
+
+  .navigation .menuIcon {
+    display: flex;
+    flex: 1;
+    list-style-type: none;
+    color: #333333;
+    font-size: 35px;
+    width: 25%;
+    justify-content: end;
+  }
+
+  .specials div#specialsHeaderButton {
+    margin-left: 40px;
+  }
+
+  .specials div#specialsHeaderButton input {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .imgAside, .navItem, .aboutPicturesAside, .footerAside {
+    display: none;
   }
 }

@@ -1,16 +1,18 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 //import App from './App';
-//import BookingForm from './components/BookingForm';
-import Main from './components/Main';
+import BookingForm from './components/BookingForm';
+import BookingPage from './components/BookingPage';
 
-test('InitalizeTimes function and availableTimes state both return ""', () => {
-  const initializeTimes = jest.fn();
-  //render(<BookingForm handleChange={handleChange}/>);
-  render(<Main/>)
+test('Renders BookingForm header', () => {
+  render(<BookingForm/>);
 
-  //const selectInput = screen.getByLabelText(/Choose time/);
-  //fireEvent.change(selectInput, {target: {value: "20:00"}});
+  const labelElement = screen.getByLabelText("/Choose date:/");
+  expect(labelElement).toBeInTheDocument();
+});
 
-  expect(initializeTimes).toBeCalled();
-  expect(initializeTimes).toReturn("");
+test('InitializeTimes function return an array of available times', () => {
+  render(<BookingForm/>);
+  const time = screen.getAllByTestId("res-time");
+
+  expect(time).toContain("17:00");
 });

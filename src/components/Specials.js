@@ -5,9 +5,11 @@ import restFood from "./pics/restauranfood.jpg";
 
 export default function Specials() {
     return (
-        <article className='specials'>
+        <section className='specials'>
             <div id="specialsHeader">
                 <h2>Specials</h2>
+            </div>
+            <div id="specialsHeaderButton">
                 <input type="button" value="On the menu"/>
             </div>
             <div>
@@ -46,6 +48,6 @@ export default function Specials() {
                     <input type="button" value="Order from menu"/>
                 </aside>
             </div>
-        </article>
+        </section>
     );
 }

@@ -4,7 +4,7 @@ import restauranfood from "./pics/restauranfood.jpg";
 export default function Header(props) {
     return (
         <article className='header'>
-            <aside>
+            <aside className='titleAside'>
                 <h1>{props.title}</h1>
                 <h3>{props.secondTitle}</h3>
                 <p>
@@ -15,7 +15,7 @@ export default function Header(props) {
                 </p><br/>
                 <input type="button" value="Reserve a table"/>
             </aside>
-            <aside>
+            <aside className='imgAside'>
                 <img src={restauranfood} alt="Restaurant food"/>
             </aside>
         </article>

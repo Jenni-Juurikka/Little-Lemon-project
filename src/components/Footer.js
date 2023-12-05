@@ -4,7 +4,7 @@ import footerLogo from "./pics/Asset 20@4x.png";
 export default function Footer() {
     return (
         <footer className='footer'>
-            <aside>
+            <aside className='footerAside'>
                 <img src={footerLogo} alt="Little Lemon footer logo"/>
             </aside>
             <aside>
